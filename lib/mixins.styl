@@ -1,0 +1,58 @@
+/**
+ * Module dependencies
+ */
+
+@require './variables'
+
+/**
+ * Define variables for `padding` transparent mixin.
+ */
+
+padding--mixin-allow ?= true
+
+/**
+ * Apply transparent mixin to
+ *   - `padding`
+ *   - `padding-top`
+ *   - `padding-right`
+ *   - `padding-bottom`
+ *   - `padding-left`
+ */
+
+if padding--mixin-allow is true
+  padding(arguments)
+    padding--mixin(arguments)
+
+  // `padding` clockhand positions
+  padding-top(arguments)
+    padding--mixin(arguments)
+  padding-right(arguments)
+    padding--mixin(arguments)
+  padding-bottom(arguments)
+    padding--mixin(arguments)
+  padding-left(arguments)
+    padding--mixin(arguments)
+
+/**
+ * Replace arguments in current-property
+ * with `padding--` variables, if matching.
+ *
+ * Example:
+ *
+ *   ```stylus
+ *   html
+ *     padding 1px sm
+ *   ```
+ *
+ *   ```css
+ *   html { padding: 1px 7px; }
+ *   ```
+ * @type mixin
+ */
+
+padding--mixin(pos)
+  prop = current-property[0]
+  args = current-property[1]
+  for idx in 0..(length(args))
+    args[idx] = (lookup(join('--', prop args[idx]))) or args[idx]
+  {prop} args

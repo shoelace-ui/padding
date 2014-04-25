@@ -1,0 +1,11 @@
+{
+  "name" : "shoelace-ui-padding",
+  "version" : "0.0.1",
+  "description" : "Padding variables",
+  "repository" : "https://github.com/shoelace-ui/padding.git",
+  "keywords" : ["stylus","padding"],
+  "author" : "Michael Andrew Vanasse <mail@mndvns.com>",
+  "license" : "MIT"
+  "dependencies": {
+  }
+}
