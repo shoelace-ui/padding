@@ -5,7 +5,6 @@
   "repository" : "https://github.com/shoelace-ui/padding.git",
   "keywords" : ["stylus","padding"],
   "author" : "Michael Andrew Vanasse <mail@mndvns.com>",
-  "license" : "MIT"
-  "dependencies": {
-  }
+  "license" : "MIT",
+  "dependencies": {}
 }
