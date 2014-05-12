@@ -1,6 +1,6 @@
 # padding
 
-Padding variations.
+Padding variations and mixins.
 
 ## Installation
 

@@ -5,12 +5,6 @@
 @require './variables'
 
 /**
- * Define variables for `padding` transparent mixin.
- */
-
-padding--mixin-allow ?= true
-
-/**
  * Apply transparent mixin to
  *   - `padding`
  *   - `padding-top`
@@ -19,18 +13,18 @@ padding--mixin-allow ?= true
  *   - `padding-left`
  */
 
-if padding--mixin-allow is true
-  padding(arguments)
+if padding--apply-mixin is true
+  padding()
     padding--mixin(arguments)
 
   // `padding` clockhand positions
-  padding-top(arguments)
+  padding-top()
     padding--mixin(arguments)
-  padding-right(arguments)
+  padding-right()
     padding--mixin(arguments)
-  padding-bottom(arguments)
+  padding-bottom()
     padding--mixin(arguments)
-  padding-left(arguments)
+  padding-left()
     padding--mixin(arguments)
 
 /**
