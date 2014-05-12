@@ -5,12 +5,40 @@
 @require './variables'
 
 /**
+ * Replace arguments in current-property
+ * with `padding--` variables, if matching.
+ *
+ * Example:
+ *
+ *   ```stylus
+ *   html { padding 1px sm; }
+ *   ```
+ *
+ *   ```css
+ *   html { padding: 1px 7px; }
+ *   ```
+ * @type mixin
+ * @type opaque
+ */
+
+padding--mixin(pos)
+  prop = current-property[0]
+  args = current-property[1]
+  for idx in 0..(length(args))
+    args[idx] = (lookup(join('--', prop args[idx]))) or args[idx]
+  {prop} args
+
+
+/**
  * Apply transparent mixin to
  *   - `padding`
  *   - `padding-top`
  *   - `padding-right`
  *   - `padding-bottom`
  *   - `padding-left`
+ *
+ * @type mixin
+ * @type transparent
  */
 
 if padding--apply-mixin is true
@@ -26,27 +54,3 @@ if padding--apply-mixin is true
     padding--mixin(arguments)
   padding-left()
     padding--mixin(arguments)
-
-/**
- * Replace arguments in current-property
- * with `padding--` variables, if matching.
- *
- * Example:
- *
- *   ```stylus
- *   html
- *     padding 1px sm
- *   ```
- *
- *   ```css
- *   html { padding: 1px 7px; }
- *   ```
- * @type mixin
- */
-
-padding--mixin(pos)
-  prop = current-property[0]
-  args = current-property[1]
-  for idx in 0..(length(args))
-    args[idx] = (lookup(join('--', prop args[idx]))) or args[idx]
-  {prop} args
