@@ -3,31 +3,7 @@
  */
 
 @require './variables'
-
-/**
- * Replace arguments in current-property
- * with `padding--` variables, if matching.
- *
- * Example:
- *
- *   ```stylus
- *   html { padding 1px sm; }
- *   ```
- *
- *   ```css
- *   html { padding: 1px 7px; }
- *   ```
- * @type mixin
- * @type opaque
- */
-
-padding--mixin(pos)
-  prop = current-property[0]
-  args = current-property[1]
-  for idx in 0..(length(args))
-    args[idx] = (lookup(join('--', prop args[idx]))) or args[idx]
-  {prop} args
-
+@require 'shoelace-ui-clockwise'
 
 /**
  * Apply transparent mixin to
@@ -37,20 +13,19 @@ padding--mixin(pos)
  *   - `padding-bottom`
  *   - `padding-left`
  *
- * @type mixin
- * @type transparent
+ * @mixin
+ * @transparent
  */
 
-if padding--apply-mixin is true
-  padding()
-    padding--mixin(arguments)
+padding()
+  clockwise--mixin('padding', arguments)
 
-  // `padding` clockhand positions
-  padding-top()
-    padding--mixin(arguments)
-  padding-right()
-    padding--mixin(arguments)
-  padding-bottom()
-    padding--mixin(arguments)
-  padding-left()
-    padding--mixin(arguments)
+// `padding` clockhand positions
+padding-top()
+  clockwise--mixin('padding', arguments)
+padding-right()
+  clockwise--mixin('padding', arguments)
+padding-bottom()
+  clockwise--mixin('padding', arguments)
+padding-left()
+  clockwise--mixin('padding', arguments)

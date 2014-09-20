@@ -1,13 +1,17 @@
-# padding
+#  padding
 
-Padding variations and mixins.
+Padding variables and mixin
 
-## Installation
+## Install
 
 ```sh
-$ npm install git://github.com/shoelace-ui/padding.git
+$ npm install shoelace-ui-padding
 ```
+## Usage
 
+```styl
+@require 'shoelace-ui-padding'
+```
 ## License
 
 MIT
