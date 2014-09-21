@@ -2,17 +2,17 @@
  * Padding amount variations.
  */
 
-padding--extra-large ?= 15px
-padding--xl           = padding--extra-large
-
-padding--large       ?= 10px
-padding--lg           = padding--large
-
 padding--base        ?= 6px
 padding--md           = padding--base
 
-padding--small       ?= 5px
+padding--large       ?= round(padding--md * 1.6) // 10px
+padding--lg           = padding--large
+
+padding--extra-large ?= round(padding--md * 2.5) // 15px
+padding--xl           = padding--extra-large
+
+padding--small       ?= round(padding--md * 0.8) // 5px
 padding--sm           = padding--small
 
-padding--extra-small ?= 4px
+padding--extra-small ?= round(padding--md * 0.6) // 4px
 padding--xs           = padding--extra-small
