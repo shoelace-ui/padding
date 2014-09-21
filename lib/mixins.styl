@@ -5,6 +5,7 @@
 @require './variables'
 @require 'shoelace-ui-clockwise'
 
+
 /**
  * Apply transparent mixin to
  *   - `padding`
@@ -17,15 +18,16 @@
  * @transparent
  */
 
-padding()
-  clockwise--mixin('padding', arguments)
+if (padding--apply-mixin == true)
+  padding()
+    clockwise--mixin('padding', arguments)
 
-// `padding` clockhand positions
-padding-top()
-  clockwise--mixin('padding', arguments)
-padding-right()
-  clockwise--mixin('padding', arguments)
-padding-bottom()
-  clockwise--mixin('padding', arguments)
-padding-left()
-  clockwise--mixin('padding', arguments)
+  // `padding` clockhand positions
+  padding-top()
+    clockwise--mixin('padding', arguments)
+  padding-right()
+    clockwise--mixin('padding', arguments)
+  padding-bottom()
+    clockwise--mixin('padding', arguments)
+  padding-left()
+    clockwise--mixin('padding', arguments)
